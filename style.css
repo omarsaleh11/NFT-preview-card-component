@@ -1,0 +1,208 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+/* general variables */
+:root {
+  /* ### Primary */
+  --clr-primary-blue: hsl(215, 51%, 70%);
+  --clr-primary-cyan: hsl(178, 100%, 50%);
+  /* ### Neutral */
+  --clr-Neutral-bg: hsl(217, 54%, 11%);
+  --clr-Neutral-card-bg: hsl(216, 50%, 16%);
+  --clr-Neutral-card-line: hsl(215, 32%, 27%);
+  --clr-Neutral-card-title: hsl(0, 0%, 100%);
+  /* Font */
+  --fs-p: 18px;
+  --ff-main: 'Outfit', sans-serif;
+  --fw-s: 300;
+  --fw-m: 400;
+  --fw-l: 700;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: var(--ff-main);
+  background-color: var(--clr-Neutral-bg);
+  font-size: var(--fs-p);
+}
+/* Set core body defaults */
+body {
+  padding: 20px;
+  text-rendering: optimizeSpeed;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.grid-desc {
+  color: var(--clr-primary-blue);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-s);
+}
+.title {
+  color: var(--clr-Neutral-card-title);
+  font-weight: var(--fw-m);
+  margin-bottom: .5rem;
+}
+img {
+  border-radius: 5px;
+  width: 100%;
+}
+.cyan {
+  color: var(--clr-primary-cyan);
+}
+a {
+  color: var(--clr-Neutral-card-title);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--clr-primary-cyan);
+}
+/* start */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.1rem;
+  max-width: 280px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: 7.5rem auto;
+  background-color: var(--clr-Neutral-card-bg);
+  padding: 0.7rem 14px;
+  transition: .6s ease-in-out;
+  border-radius: 15px;
+}
+.container:hover {
+  box-shadow: 3px 3px 6px black;
+}
+.grid-img {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+.img-grid {
+  display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .6s ease-in-out;
+  background-color: hsla(178, 100%, 50%, .5);
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.grid-img:hover .overlay {
+  opacity: 1;
+}
+p {
+  opacity: .8;
+  margin: .5rem 0;
+  font-size: 15px;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 14px;
+  font-weight: var(--fw-m);
+}
+li {
+  display: flex;
+}
+.svg, .avatar {
+  width: auto;
+  height: 16px;
+  margin-right: 6px;
+}
+.line {
+  background-color: var(--clr-Neutral-card-line);
+  height: 1px;
+  margin: 10px 0;
+}
+.grid-credit {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 15px;
+  text-align: center;
+  align-items: center;
+}
+.avatar {
+  height: 24px;
+  margin-right: 10px;
+}
+.grid-credit img {
+  color: var(--clr-Neutral-card-title);
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 20px;
+}
+.grid-credit a {
+  margin-left: 5px;
+}
